@@ -5,7 +5,7 @@ VOLUME /pxe
 WORKDIR /pxe
 COPY dnsmasq /usr/sbin
 RUN chmod a+x /usr/sbin/dnsmasq
-ENTRYPOINT ["dnsmasq -d"]
+ENTRYPOINT ["/usr/sbin/dnsmasq -d"]
 CMD ["--bind-dynamic",\
      "--except-interface lo",\
      "--listen-address 192.192.2.41",\
